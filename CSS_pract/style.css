@@ -1,0 +1,11 @@
+#div1 p{
+    color:blue;
+}
+
+#div1>p{
+    color:red;
+   }
+
+   #pseudo div:nth-child(odd):hover{
+       background-color: aqua;
+   }
