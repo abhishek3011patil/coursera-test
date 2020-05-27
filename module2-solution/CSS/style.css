@@ -1,16 +1,21 @@
+
+
+*{
+    font-size: 23px;
+
+}
 h2{
     text-align: center;
-    
+    font-size: 50px;
 }
 /* For Desktop devices */
 @media (min-width: 992px){
     .col-dd-1, .col-dd-2, .col-dd-3, .col-dd-4 , .col-dd-5, .col-dd-6, .col-dd-7, .col-dd-8, .col-dd-9, .col-dd-10, .col-dd-11, .col-dd-12{
         float: left;
         border: 1px solid black;
-        padding: 30px 4px;
-        padding-bottom: 0px;
-        margin: 15px;
-        position: relative;
+      
+        
+        
     }
      .col-dd-1{
       width: 8.33%;   
@@ -54,11 +59,14 @@ h2{
 }
 
 /* For tablet devices only */
-@media (max-width: 991px ) and (mib-width: 768px){
+@media (max-width: 991px ) and (min-width: 768px){
    
     .col-td-1, .col-td-2, .col-td-3, .col-td-4 , .col-td-5, .col-td-6, .col-td-7, .col-td-8, .col-td-9, .col-td-10, .col-td-11, .col-td-12{
         float: left;
         border: 1px solid black;
+        
+        
+        position: relative;
     }
      .col-td-1{
       width: 8.33%;   
@@ -103,6 +111,8 @@ h2{
     .col-md-1, .col-md-2, .col-md-3, .col-md-4 , .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{
         float: left;
         border: 1px solid black;
+         margin: 50px;
+        position: relative;
     }
      .col-md-1{
       width: 8.33%;   
@@ -143,12 +153,27 @@ h2{
      }
 }
 
-div.inner_element{
+ div.inner_element{
+     font-family: cursive;
+     text-align: center;
+     font-size: 27px;
+     font-weight: bolder;
     position: absolute;
+    width: 200px;
     top: 0px;
     right: 0px;
     border: 1px solid black;
     padding:5px;
-    
-    height: 25px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 30px;
+}
+
+section.col-dd-3 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: relative;
+    padding: 21px;
+    height: 200px;
+    margin: 30px;
+    background-color: aqua;
 }
