@@ -1,25 +1,22 @@
-const btn = document.querySelectorAll(".btn");
-let count=0;
-const counter=document.querySelector("#counter");
+const btns = document.querySelectorAll(".btn");
+var count=0;
+const counter=document.querySelector("#value");
 
 
-btn.forEach(function(btns){
-   btns.addEventListener("click", function(e){
+btns.forEach(function(btn){
+   btn.addEventListener("click", function (e){
     const styles = e.currentTarget.classList;
     console.log(e.currentTarget.classList);
     
-    if(styles.contains("dec"));
-    {
+    if(styles.contains('decrease')){
         count--;
-        
-    }
-    if(styles.contains("inc")){
+    }else if(styles.contains('increase')){
         count++;
-
     }
     else{
         count=0;
     }
+
     console.log(count);
       counter.textContent=count;
 
@@ -28,6 +25,10 @@ btn.forEach(function(btns){
       }
       else if(count<0){
           counter.style.color="red";
+      }
+      else
+      {
+          counter.style.color="blue";
       }
 
    });
