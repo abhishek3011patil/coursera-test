@@ -1,17 +1,7 @@
-const questions = document.querySelectorAll(".question");
+const btn = document.querySelectorAll(".question-btn");
 
-questions.forEach(function(question){
-   const btn = question.querySelector(".question-btn");
-    btn.addEventListener("click", function(){
-        console.log(question);
-    
-        questions.forEach(function(items){
-            
-            if(items !== question){
-                console.log(items);
-                items.classList.remove("show-text");
-            }
-        });
-           question.classList.toggle("show-text");
+btn.forEach(function(btns){
+    btns.addEventListener("click", function(){
+        console.log(btns.parentElement);
     });
 });
