@@ -85,11 +85,59 @@ const menu = [
 // display all items when page loads
 
 const sec_cen = document.querySelector(".section-center");
+const btn_container = document.querySelector(".btn-container");
+
+
+
+
 
 window.addEventListener("DOMContentLoaded", function(){
   addItems(menu);
+  addbtns(menu);
   
 });
+
+function addbtns(additems){
+  const categories= additems.reduce(function(value,item){
+    if(!value.includes(item.category)){
+      value.push(item.category);
+    
+    }
+    return value;
+    
+  },["all"]);
+
+  let btn_items = categories.map(function(item){
+
+    return ` <button type="button" class="filter-btn" data-id="${item}">
+    ${item}
+  </button>`;
+  
+  }).join("");
+    
+  btn_container.innerHTML = btn_items;
+  
+
+  const filter_btn = document.querySelectorAll(".filter-btn");
+
+  filter_btn.forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      const btn_Catagory = e.currentTarget.dataset.id;
+      const btn_items = menu.filter(function(item){
+        if(btn_Catagory==item.category){
+          return item;
+        }
+      });
+      if(btn_Catagory=="all"){
+        addItems(menu);
+      }
+      else{
+        addItems(btn_items);
+      }
+    });
+  });
+  
+}
 
 function addItems(additems){
      let items=additems.map(function(additem){
@@ -113,3 +161,5 @@ function addItems(additems){
   
         
 }
+
+
