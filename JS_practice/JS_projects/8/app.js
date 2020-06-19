@@ -84,3 +84,32 @@ const menu = [
 
 // display all items when page loads
 
+const sec_cen = document.querySelector(".section-center");
+
+window.addEventListener("DOMContentLoaded", function(){
+  addItems(menu);
+  
+});
+
+function addItems(additems){
+     let items=additems.map(function(additem){
+       
+        return `<article class="menu-item">
+     <img src="${additem.img}" alt="menu item" class="photo" />
+     <div class="item-info">
+       <header>
+         <h4>${additem.title}</h4>
+         <h4 class="price">${additem.price}</h4>
+       </header>
+       <p class="item-text">
+         ${additem.desc}
+       </p>
+     </div>
+   </article>`;
+     });
+
+     items = items.join("");
+     sec_cen.innerHTML=items;
+  
+        
+}
