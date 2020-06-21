@@ -17,4 +17,5 @@ btn.addEventListener("click", function(){
     btn.classList.remove("slide");
     video.play();
   }
+  
 });
