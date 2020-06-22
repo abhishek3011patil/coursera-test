@@ -1,17 +1,16 @@
 const questions = document.querySelectorAll(".question");
+const btn = document.querySelector(".question-btn");
 
-questions.forEach(function(question){
-   const btn = question.querySelector(".question-btn");
-    btn.addEventListener("click", function(){
+questions.forEach(function(question){ 
+    question.addEventListener("click", function(){
         console.log(question);
-    
-        questions.forEach(function(items){
-            
-            if(items !== question){
-                console.log(items);
-                items.classList.remove("show-text");
+        questions.forEach(function(item){
+            if(item!==question){
+                item.classList.remove("show-text");
             }
+
         });
-           question.classList.toggle("show-text");
+        question.classList.toggle("show-text");
     });
+    
 });
