@@ -47,11 +47,14 @@ const reviews = [
   const random = document.querySelector(".random-btn");
 
   let currentItem= 0;
+  // to display atleast one review when the page loads
   window.addEventListener('DOMContentLoaded', function(){
+    
       storeData();
   });
 
   function storeData(){
+
           img.src= reviews[currentItem].img;
           auther.textContent=reviews[currentItem].auther;
           job.textContent=reviews[currentItem].job;
