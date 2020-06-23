@@ -4,7 +4,7 @@ const close_btn = document.querySelector(".close-btn");
 
 toggle_btn.addEventListener("click", function(){
     
-   sidebar.classList.toggle("show-sidebar");
+   sidebar.classList.add("show-sidebar");
 });
 
 close_btn.addEventListener("click", function(){
