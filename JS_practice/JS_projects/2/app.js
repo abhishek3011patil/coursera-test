@@ -5,6 +5,7 @@ const counter=document.querySelector("#value");
 
 btns.forEach(function(btn){
    btn.addEventListener("click", function (e){
+       // e here require .currentTarget for accessing .classList
     const styles = e.currentTarget.classList;
     console.log(e.currentTarget.classList);
     
