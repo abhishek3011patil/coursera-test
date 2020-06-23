@@ -98,21 +98,27 @@ window.addEventListener("DOMContentLoaded", function(){
 });
 
 function addbtns(additems){
+  // we can say reduce takes given element from the array
+  // and create a new array which requires us to intialize
+  // the first element
   const categories= additems.reduce(function(value,item){
+      //new elements are store in value and then returned
     if(!value.includes(item.category)){
       value.push(item.category);
     
     }
     return value;
     
-  },["all"]);
-
+  },["all"]); //"all" is the intial element of the array categories
+ 
+  // see internet to understand map and filter.
   let btn_items = categories.map(function(item){
 
     return ` <button type="button" class="filter-btn" data-id="${item}">
     ${item}
   </button>`;
   
+  // .join() is used to remove the ',' between merge array.
   }).join("");
     
   btn_container.innerHTML = btn_items;
@@ -122,6 +128,8 @@ function addbtns(additems){
 
   filter_btn.forEach(function(btn){
     btn.addEventListener("click", function(e){
+      // dataset.id is used when there is a data-id attribute in the html
+      //here data-"id" can have any value adn dataset."id" differs according to it
       const btn_Catagory = e.currentTarget.dataset.id;
       const btn_items = menu.filter(function(item){
         if(btn_Catagory==item.category){
