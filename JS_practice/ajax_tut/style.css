@@ -21,7 +21,7 @@ html, body {
     padding: 50px 10%;
   }
   
-  button {
+  .false,.true {
     background-color: #046380;
     color: #FFF;
     border: none;
@@ -39,20 +39,15 @@ html, body {
     top: -10px;
   }
   
-  button:hover {
-    background-color: #034F66;
-  }
   
-  button:active {
-    background-color: #034154;
-    box-shadow: none;
-    position: relative;
-    top: -8px;
-    left: 2px;
+  .butettrue{
+    background-color: green;
   }
-  .butet{
+
+  .butetfalse{
     background-color: red;
   }
+  
   
   p {
     padding: 4px 0 2px 8px;
