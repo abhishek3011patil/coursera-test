@@ -17,30 +17,56 @@ quiz.send();
 
 }
 
-
+var count_question = 0;
 function display(abcjson){
     console.log(abcjson);
-    question.innerHTML = abcjson.results[0].question;
+    question.innerHTML = abcjson.results[count_question].question;
 
-    btns.forEach((btn)=>{
+    btns.forEach((btn, index)=>{
+
       btn.addEventListener("click" ,function(){
-        console.log( abcjson.results[0].correct_answer);
-        console.log( btn.dataset.id);
-        console.log( abcjson.results[0].correct_answer === btn.dataset.id);
-        btns.forEach((btn2)=>{
-          if(abcjson.results[0].correct_answer === btn.dataset.id){
-            btn2.classList.remove("butetfalse");
-         btn.classList.add("butettrue");
-        }
-         
-         else{
-         btn2.classList.remove("butettrue")
-         btn.classList.add("butetfalse");
-         }});
-
         
-      });});
+       
+
+        if(abcjson.results[count_question].correct_answer === btn.dataset.id){
+         
+       btn.classList.add("butettrue");
+      }
+       
+       else{
+       btn.classList.add("butetfalse");
+       }
+
+      //  btns.forEach((btn2)=>{
+         
+      //   if(btn2!=btn)
+      //   {
+      //    
+      //    btn2.classList.remove("butetfalse");
+
+      //   }
+
+      //  }); 
+       
+     
+         
+      btn.classList.remove("butetfalse");
+      btn.classList.remove("butettrue");
+
+      count_question++;
+      question.innerHTML = abcjson.results[count_question].question;
+      
+       
+      });
+     
+    });
     
+    
+}
+
+function questionChanger(){
+
+
 }
 
 
